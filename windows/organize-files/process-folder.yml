@@ -1,0 +1,22 @@
+rules:
+  - folders:
+      - ~/Downloads
+      - ! ~/Downloads/demonsaw_win_64/**/*
+    actions:
+      - move: 'D:\process\inbox'
+  # - folders: 'D:\process\inbox'
+  #   filters:
+  #     - extension:
+  #       - zip
+  #       - 7z
+  #       - gz
+  #   actions:
+  #     - move: 'D:\process\outbox\archive'
+  # - folders: 'D:\process\inbox'
+  #   filters:
+  #     - extension:
+  #       - doc
+  #       - ppt
+  #       - word
+  #   actions:
+  #     - move: 'D:\process\outbox\documents'

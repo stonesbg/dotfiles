@@ -7,6 +7,7 @@ if (!(Test-Path $env:USERPROFILE\Documents\WindowsPowerShell)) {
 
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 
+# Load Modules for terminal
 $modules = @(
   "PSReadline",
   "Get-ChildItemColor",
@@ -19,3 +20,12 @@ $modules | Foreach-Object {
 }
 
 Copy-Item windows\Documents\PowerShell\profile.ps1 $env:USERPROFILE\Documents\WindowsPowerShell\profile.ps1
+Copy-Item windows\Documents\PowerShell\profile.ps1 $env:USERPROFILE\OneDrive\Documents\WindowsPowerShell\profile.ps1
+
+# Laoding in other extra tools
+$modules = @(
+  "PSScriptAnalyzer"
+)
+$modules | Foreach-Object {
+  Install-Module -Name $_ -Scope CurrentUser -AllowClobber
+} 
